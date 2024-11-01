@@ -3,7 +3,6 @@
 (defn calc [height weight]
   (let [unit (/ height 100)
         denominator (* unit unit)]
-        ;; double型からfloat型へキャスト
     (Math/round (float (/ weight denominator)))))
 
 (defn rate [bmi]
