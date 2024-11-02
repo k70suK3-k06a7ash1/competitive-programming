@@ -23,3 +23,7 @@ lein test
 ```
 
 ### LISP(XXX)
+- premise
+```bash
+brew install sbcl
+```
