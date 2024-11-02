@@ -1,23 +1,25 @@
 # competitive-programming
 
 ## Language
-### Elixir
+### Elixir(Mix)
 ```bash
 mix new ${project}
 cd ${project}
 mix test
 ```
 
-### Haskell
+### Haskell(Stack)
 ```bash
 stack new ${project}
 cd ${project}
 stack test
 ```
 
-### Clojure
+### Clojure(Leiningen)
 ```bash
 lein new ${project}
 cd ${project}
 lein test
 ```
+
+### LISP(XXX)
