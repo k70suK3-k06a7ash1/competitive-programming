@@ -1,6 +1,10 @@
 {
-    "editor.formatOnType": true,
-    "[commonlisp]": {
-        "editor.wordSeparators": "`|;:'\",()"
-    }
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "[commonlisp]": {
+    "editor.wordSeparators": "`|;:'\",()"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }
