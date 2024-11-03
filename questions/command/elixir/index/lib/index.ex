@@ -1,10 +1,10 @@
 defmodule Index do
-  def command(s) do
+  def command(s) when is_list(s) do
     cond do
-      Enum.all?(s, &Helper.isPerfect/1) ->
+      Enum.all?(s, &Helper.is_perfect/1) ->
         Judge.perfect()
 
-      Enum.all?(s, fn e -> Helper.isPerfect(e) or Helper.isGreat(e) end) ->
+      Enum.all?(s, fn e -> Helper.is_perfect(e) or Helper.is_great(e) end) ->
         Judge.full_combo()
 
       true ->
@@ -20,27 +20,22 @@ defmodule Command do
   @good :good
   @bad :bad
   @miss :miss
-  @spec all() :: [t]
 
   def is_equal_perfect(s) do
-    # Command モジュールの @perfect を参照
-    s == Atom.to_string(@perfect)
+    s == @perfect
   end
 
   def is_equal_great(s) do
-    # Command モジュールの @perfect を参照
-    s == Atom.to_string(@perfect)
+    s == @great
   end
 end
 
 defmodule Helper do
-  def isPerfect(s) do
-    # ここで "perfect" という文字列をチェック
+  def is_perfect(s) do
     Command.is_equal_perfect(s)
   end
 
-  def isGreat(s) do
-    # ここで "great" という文字列をチェック
+  def is_great(s) do
     Command.is_equal_great(s)
   end
 end
@@ -51,17 +46,11 @@ defmodule Judge do
   @failed "Failed"
 
   @spec perfect() :: String.t()
-  def perfect do
-    @perfect
-  end
+  def perfect, do: @perfect
 
   @spec full_combo() :: String.t()
-  def full_combo do
-    @full_combo
-  end
+  def full_combo, do: @full_combo
 
   @spec failed() :: String.t()
-  def failed do
-    @failed
-  end
+  def failed, do: @failed
 end
