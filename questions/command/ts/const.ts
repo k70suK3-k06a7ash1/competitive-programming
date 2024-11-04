@@ -10,4 +10,4 @@ export const Judge = {
   PERFECT: "All Perfect",
   FULL_COMBO: "Full Combo",
   FAILED: "Failed",
-};
+} as const;
