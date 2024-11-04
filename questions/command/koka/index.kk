@@ -6,10 +6,18 @@ fun isGreat(e:string) : bool
   e == "Great"
 
 
-val input = ["Perfect", "Great","Good","Bad", "Miss"]
+val input_falied = ["Perfect", "Great","Good","Bad", "Miss"]
+val full_combo = ["Perfect", "Great", "Great"]
+val all_perfect = ["Perfect","Perfect","Perfect"]
 
-fun main(){
-     if all(map( input, fn(i) {return isPerfect(i) } ),fn(x) {return x}) then "All Perfect"
-     elif all(map(input, fn(i) {return isPerfect(i)|| isGreat(i)} ), fn(x) {return x}) then "Full Combo" 
+fun calc(s: list<string>){
+     if all(map( s, fn(i) {return isPerfect(i) } ),fn(x) {return x}) then "All Perfect"
+     elif all(map(s, fn(i) {return isPerfect(i)|| isGreat(i)} ), fn(x) {return x}) then "Full Combo" 
      else "Failed"
 }
+
+fun main()
+    calc(input_falied).println 
+    calc(full_combo).println
+    calc(all_perfect).println
+   
