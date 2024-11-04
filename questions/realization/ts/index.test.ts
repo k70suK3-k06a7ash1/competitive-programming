@@ -7,3 +7,12 @@ const P: number[] = [31,41, 59, 26, 53, 58, 97, 93, 23, 84]// input[2].split(" "
 
   expect(main(N,A,P)).eq(299);
 });
+
+
+test("case2", () => {
+  const N: number = 10
+  const A: number[] = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+  const P: number[] = [1, 1, 1, 1, 1, 1, 1000000000, 1, 1, 1]
+  expect(main(N,A,P)).eq(10000000000
+);
+});
